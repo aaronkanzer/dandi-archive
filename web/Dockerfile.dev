@@ -1,7 +1,7 @@
 FROM node:16
 
-# Arbitrary directory inside the container
-WORKDIR /usr/src/app
+# Assign working directory for volume mounting (enables hot reloading)
+WORKDIR /app
 
 COPY package.json ./
 

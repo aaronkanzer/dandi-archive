@@ -29,7 +29,7 @@ docker build -t <whatever you want the container to be named> -f Dockerfile.dev 
 then, to start the container locally, run:
 
 ```bash
-docker run -p 8085:8085 -d <whatever you want the container to be named>
+docker run -p 8085:8085 -v $(pwd):/app -v /app/node_modules <whatever you want the container to be named>
 ```
 
 **Note**: On Debian systems, the `yarn` command is from the unrelated `cmdtest` package.
