@@ -5,11 +5,31 @@ The DANDI Archive web application (i.e. the dandi-archive frontend).
 
 ### Build and Run
 
+## If you are running Node v16 locally
+
 ```bash
 git clone https://github.com/dandi/dandi-archive
 cd web
 yarn install
 yarn run serve
+```
+
+## If you are not running Node v16 locally
+
+A `Dockerfile.dev` that uses Node v16 as a base image is available for local use.
+
+To leverage this, run the following commands in the root of the `web` directory:
+
+```bash
+docker build -t <whatever you want the container to be named> -f Dockerfile.dev .
+```
+
+*This build process may take some time to install the node dependencies
+
+then, to start the container locally, run:
+
+```bash
+docker run -p 8085:8085 -d <whatever you want the container to be named>
 ```
 
 **Note**: On Debian systems, the `yarn` command is from the unrelated `cmdtest` package.
