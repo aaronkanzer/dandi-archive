@@ -1,0 +1,14 @@
+FROM node:16
+
+# Assign working directory for volume mounting (enables hot reloading)
+WORKDIR /app
+
+COPY package.json ./
+
+RUN yarn install
+
+COPY . .
+
+EXPOSE 8085
+
+CMD [ "yarn", "run", "serve" ]
